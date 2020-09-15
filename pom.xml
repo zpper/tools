@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.zipper.test</groupId>
+    <artifactId>jfx-client</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>allowIp</module>
+        <module>ssh</module>
+        <module>test</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>8</java.version>
+    </properties>
+    <dependencyManagement>
+
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+            <!--图片处理-->
+            <!--<dependency>-->
+            <!--<groupId>net.coobird</groupId>-->
+            <!--<artifactId>thumbnailator</artifactId>-->
+            <!--<version>0.4.8</version>-->
+            <!--</dependency>-->
+
+            <!--&lt;!&ndash; https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j &ndash;&gt;-->
+            <!--&lt;!&ndash;ocr&ndash;&gt;-->
+            <dependency>
+                <groupId>net.sourceforge.tess4j</groupId>
+                <artifactId>tess4j</artifactId>
+                <version>4.3.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>com.github.sarxos</groupId>
+                <artifactId>webcam-capture</artifactId>
+                <version>0.3.12</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
