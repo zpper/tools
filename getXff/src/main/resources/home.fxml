@@ -32,45 +32,53 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="com.zipper.xff.FXMLExampleController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
-          styleClass="root">
+<GridPane alignment="center" hgap="10" prefHeight="590.0" prefWidth="529.0" styleClass="root" vgap="10"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+          fx:controller="com.zipper.xff.GetIPController">
     <padding>
-        <Insets top="25" right="25" bottom="10" left="25"/>
+        <Insets bottom="10" left="25" right="25" top="25"/>
     </padding>
+    <children>
 
-    <Text id="welcome-text" text="Welcome"
-          GridPane.columnIndex="0" GridPane.rowIndex="0"
-          GridPane.columnSpan="2"/>
+        <HBox prefHeight="50.0" prefWidth="529.0" GridPane.rowIndex="1">
+            <children>
+                <Button fx:id="listenButton" defaultButton="true" onAction="#switchListen" prefHeight="45.0"
+                        prefWidth="293.0">启用监听
+                </Button>
+                <Button onAction="#wfOther" prefHeight="45.0" prefWidth="294.0" style="margin-right: 0;"
+                        textAlignment="JUSTIFY">拷贝到剪切板
+                </Button>
 
-    <Label text="User Name:"
-           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            </children>
+        </HBox>
+        <HBox prefHeight="400.0" prefWidth="529.0">
+            <children>
 
-    <TextField
-            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextArea fx:id="showPanel" maxHeight="800" prefHeight="800.0" prefWidth="600.0"/>
+            </children>
+        </HBox>
+    </children>
 
-    <Label text="Password:"
-           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-
-    <PasswordField fx:id="passwordField"
-                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-
-    <HBox spacing="10" alignment="bottom_right"
-          GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button text="Sign In"
-                onAction="#handleSubmitButtonAction"/>
-        <Text fx:id="alert"/>
-    </HBox>
-
-
-    <!--    <stylesheets>-->
-    <!--        <URL value="@Login.css"/>-->
-    <!--    </stylesheets>-->
+    <stylesheets>
+        <URL value="@Login.css"/>
+    </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
 
 </GridPane>

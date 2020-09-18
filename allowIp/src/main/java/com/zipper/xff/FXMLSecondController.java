@@ -1,4 +1,4 @@
-package com.zipper.allow;
+package com.zipper.xff;
 
 
 import javafx.beans.value.ChangeListener;
@@ -131,6 +131,11 @@ public class FXMLSecondController {
     }
 
 
+    /**
+     * 添加白名单
+     *
+     * @param actionEvent
+     */
     public void addToAllowIp(javafx.event.ActionEvent actionEvent) {
 
         File file = new File(allowPath);
@@ -148,15 +153,16 @@ public class FXMLSecondController {
             }
         }
 
-        try (FileOutputStream out = new FileOutputStream(file, true);) {
+
+        try (OutputStream out = new FileOutputStream(file, true);) {
 
 
             IpInfo ipInfo = getIpInfo(inputValue);
+
             if (ipInfo != null) {
-                PrintWriter writer = new PrintWriter(out);
-                writer.append(ipInfo.getIp() + "\t" + (ipInfo.getTitle() == null ? "" : ipInfo.getTitle()) + "\n");
-                writer.flush();
-                writer.close();
+                String outLine = ipInfo.getIp() + "\t" + (ipInfo.getTitle() == null ? "" : ipInfo.getTitle()) + "\n";
+                out.write(outLine.getBytes("utf-8"));
+                out.flush();
             } else {
                 error.setText(inputValue + "\t格式不正确");
             }

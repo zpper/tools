@@ -6,28 +6,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zipper.allow.FXMLSecondController">
-   <children>
-   
-       <HBox prefHeight="60.0" prefWidth="600.0">
-      <children>
-              <Button defaultButton="true" onAction="#matchInputIp" prefHeight="45.0" prefWidth="309.0">加载白名单</Button>
-      
-              <Button onAction="#addToAllowIp" prefHeight="45.0" prefWidth="294.0" style="margin-right: 0;" textAlignment="JUSTIFY">添加到白名单</Button>
-      </children>
-       </HBox>
-       <HBox maxWidth="NaN">
-          <children>
-              <TextField fx:id="searchText" maxWidth="800" minWidth="400" prefHeight="72.0" prefWidth="400.0" />
-          </children>
-       </HBox>
-   
-       <HBox maxWidth="800" minWidth="400" prefHeight="86.0" prefWidth="600.0">
-      <children>
-              <Text fx:id="error" />
-      </children>
-       </HBox>
-       <HBox maxWidth="800" minWidth="400" />
-        <TextArea fx:id="outText" maxHeight="800" prefHeight="240.0" prefWidth="600.0" />
-   </children>
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.zipper.xff.FXMLSecondController">
+    <children>
+
+        <HBox prefHeight="60.0" prefWidth="600.0">
+            <children>
+                <Button defaultButton="true" onAction="#matchInputIp" prefHeight="45.0" prefWidth="309.0">加载白名单</Button>
+
+                <Button onAction="#addToAllowIp" prefHeight="45.0" prefWidth="294.0" style="margin-right: 0;"
+                        textAlignment="JUSTIFY">添加到白名单
+                </Button>
+            </children>
+        </HBox>
+        <HBox maxWidth="NaN">
+            <children>
+                <TextField fx:id="searchText" maxWidth="800" minWidth="400" prefHeight="72.0" prefWidth="400.0"/>
+            </children>
+        </HBox>
+
+        <HBox maxWidth="800" minWidth="400" prefHeight="86.0" prefWidth="600.0">
+            <children>
+                <Text fx:id="error"/>
+            </children>
+        </HBox>
+        <HBox maxWidth="800" minWidth="400"/>
+        <TextArea fx:id="outText" maxHeight="800" prefHeight="240.0" prefWidth="600.0"/>
+    </children>
 </VBox>

@@ -1,4 +1,4 @@
-package com.zipper.allow;
+package com.zipper.xff;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -6,9 +6,6 @@ import javafx.event.EventType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -16,7 +13,6 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.io.IOException;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * @author peng0806@foxmail.com <br>
