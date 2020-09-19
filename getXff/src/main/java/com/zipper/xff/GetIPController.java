@@ -4,10 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
+import java.util.stream.Collectors;
+
 
 /**
  * @author peng0806@foxmail.com <br>
@@ -20,6 +23,9 @@ public class GetIPController {
     private Button listenButton;
     @FXML
     private TextArea showPanel;
+
+    @FXML
+    private javafx.scene.control.CheckBox reduceDup;
 
     private Boolean hasListener;
 
@@ -38,6 +44,10 @@ public class GetIPController {
         if (!hasListener) {
 
             StartApplication.addListener((ips) -> {
+
+                if (reduceDup.isSelected()) {
+                    ips = ips.stream().distinct().collect(Collectors.toList());
+                }
                 this.ips = ips;
                 showPanel.clear();
                 if (show) {
@@ -66,4 +76,5 @@ public class GetIPController {
         }
 
     }
+
 }

@@ -13,6 +13,7 @@
         <module>getXff</module>
         <module>ssh</module>
         <module>test</module>
+        <module>aline</module>
     </modules>
 
     <parent>
