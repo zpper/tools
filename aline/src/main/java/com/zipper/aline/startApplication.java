@@ -1,27 +1,14 @@
 package com.zipper.aline;
 
-import com.sun.deploy.panel.GeneralPanel;
 import javafx.application.Application;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
-import javafx.scene.Camera;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.Axis;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.control.Button;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.shape.Box;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import sun.print.PSPrinterJob;
-import sun.print.PeekGraphics;
 
-import java.awt.*;
-import java.util.List;
 
 /**
  * @author peng0806@foxmail.com <br>
@@ -29,38 +16,45 @@ import java.util.List;
  */
 public class startApplication extends Application {
 
+
     private Stage stage;
-    private Canvas cv;
 
     public static void main(String[] args) {
         launch(args);
     }
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-
-        stage = primaryStage;
-        stage.setFullScreen(true);
+        loadIcon(primaryStage);
 
 
-        Group parent = new Group();
-        Canvas cv = new Canvas();
+        Parent root = FXMLLoader.load(getClass().getResource("/home.fxml"));
 
-        Scene sn = new Scene(parent, 1, 1);
-        sn.setOnMouseClicked(e -> {
-            System.out.println(e.getScreenX() + ":" + e.getScreenY());
-            System.out.println(e.getSceneX() + ":" + e.getSceneY());
-        });
 
-        stage.setScene(sn);
+        Scene scene = new Scene(root, 500, 500);
 
-        stage.setTitle("测试");
-        stage.setMaxHeight(100);
-        stage.setMaxWidth(100);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
-//        stage.setIconified(false);
-        stage.show();
 
     }
+
+    private void loadIcon(Stage primaryStage) {
+        stage = primaryStage;
+
+        try {
+
+            javafx.scene.image.Image image = new javafx.scene.image.Image("file:///E:\\workspaceAll\\gitee\\javafx\\aline\\src\\main\\resources\\logo2.png");
+            stage.getIcons().add(image);
+            stage.setIconified(true);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+    }
+
+
 }
