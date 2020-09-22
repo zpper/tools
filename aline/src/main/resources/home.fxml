@@ -7,6 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.image.ImageView?>
 <VBox
         fx:controller="com.zipper.aline.HomeController"
         prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -53,8 +54,14 @@
         </MenuBar>
         <SplitPane dividerPositions="0.5078369905956113" prefHeight="382.0" prefWidth="640.0">
             <items>
-                <AnchorPane fx:id="orgPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
-                <AnchorPane fx:id="dupPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0"/>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <ImageView fx:id="orgPane"></ImageView>
+                </AnchorPane>
+
+                <AnchorPane  minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <ImageView fx:id="dupPane"></ImageView>
+                </AnchorPane>
+
             </items>
         </SplitPane>
     </children>

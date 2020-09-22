@@ -25,29 +25,23 @@ import java.util.List;
 public class HomeController {
 
     @FXML
-    private AnchorPane orgPane;
+    private ImageView orgPane;
 
     @FXML
-    private AnchorPane dupPane;
+    private ImageView dupPane;
 
     public void loadSrc() {
 
         URL file = getClass().getResource("/img001.png");
+        orgPane.setImage(new Image(file.toExternalForm()));
 
-        ImageView img = new ImageView();
-        img.setImage(new Image(file.toExternalForm()));
-        orgPane.getChildren().add(img);
     }
 
     public void transform() {
-        URL file = getClass().getResource("/img001.png");
 
-        ImageView img = new ImageView();
+        Image img = orgPane.getImage();
 
-        img.setImage(new Image(file.toExternalForm()));
-        img.setImage(loadTransImg(img.getImage()));
-
-        dupPane.getChildren().add(img);
+        dupPane.setImage(loadTransImg(img));
 
     }
 
