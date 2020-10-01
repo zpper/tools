@@ -15,8 +15,9 @@ public class Controller  implements Initializable {
     @FXML
     private WebView webView;
 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // TODO Auto-generated method stub
+        
 
         final WebEngine webengine = webView.getEngine();
         String url = Main.class.getResource("/local/index.html").toExternalForm();
